@@ -1,0 +1,64 @@
+
+/* 1. Reset default browser spaces so the color goes edge-to-edge */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+}
+
+/* 2. Full-screen app canvas wrapper */
+.app-container {
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  transition: background-color 0.3s ease; /* Makes color transitions smooth */
+}
+
+/* 3. Positioning context to lock the dock to the bottom center */
+.toolbar-positioner {
+  position: fixed;
+  bottom: 48px; 
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  padding: 0 8px;
+  z-index: 10;
+}
+
+/* 4. The white floating dock wrapper layout */
+.dock-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px; /* Creates spacing between buttons */
+  background-color: white;
+  padding: 10px 16px;
+  border-radius: 9999px; /* Gives the dock rounded pill corners */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* 5. Custom button template */
+.color-button {
+  border: none;
+  outline: none;
+  padding: 8px 20px;
+  border-radius: 9999px; /* Makes the buttons perfectly rounded */
+  color: white;
+  font-weight: bold;
+  text-transform: capitalize;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.1s ease, opacity 0.2s ease;
+}
+
+/* Subtle feedback animations when clicking or hovering */
+.color-button:hover {
+  opacity: 0.9;
+}
+
+.color-button:active {
+  transform: scale(0.95);
+}
